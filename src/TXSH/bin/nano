@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+nano ~/fsociety.py/new_text.txt

@@ -1,0 +1,73 @@
+#!/bin/bash
+
+echo "========================="
+echo "       TX SCANNER       "
+echo "========================="
+echo ""
+echo "Was willst du scannen?"
+echo "1) Network"
+echo "2) Connected IPs"
+echo "3) Files"
+echo "4) Ping Request"
+echo "5) Others (Network tools)"
+echo ""
+
+read -p "Auswahl (1-5): " choice
+
+echo ""
+
+case $choice in
+  1)
+    echo "[*] Network Scan gestartet..."
+    echo "Local network interfaces:"
+    ip a || ifconfig
+    ;;
+
+  2)
+    echo "[*] Connected IPs werden angezeigt..."
+    echo "Active connections:"
+    netstat -tun 2>/dev/null || ss -tun
+    ;;
+
+  3)
+    echo "[*] File Scan gestartet..."
+    read -p "Pfad eingeben: " path
+
+    if [ -z "$path" ]; then
+      echo "Kein Pfad angegeben!"
+      exit 1
+    fi
+
+    echo "Dateien in $path:"
+    ls -la "$path"
+    ;;
+
+  4)
+    echo "[*] Ping Request"
+    read -p "Ziel (IP/Domain): " target
+
+    if [ -z "$target" ]; then
+      echo "Kein Ziel angegeben!"
+      exit 1
+    fi
+
+    ping -c 4 "$target"
+    ;;
+
+  5)
+    echo "[*] Advanced Network Info"
+    echo "Routing Table:"
+    route -n 2>/dev/null || ip route
+
+    echo ""
+    echo "DNS Info:"
+    cat /etc/resolv.conf
+    ;;
+
+  *)
+    echo "Ungültige Auswahl!"
+    ;;
+esac
+
+echo ""
+echo "Scan beendet."

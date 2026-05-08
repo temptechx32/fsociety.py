@@ -1,0 +1,24 @@
+#!/bin/bash
+
+echo "======================"
+echo "   TXSH NMAP TOOL    "
+echo "======================"
+echo ""
+
+read -p "Target (IP/Domain): " target
+
+if [ -z "$target" ]; then
+    echo "No target provided!"
+    exit 1
+fi
+
+echo ""
+echo "[*] Fast scan..."
+nmap -F "$target"
+
+echo ""
+echo "[*] Top ports scan..."
+nmap --top-ports 50 "$target"
+
+echo ""
+echo "[*] Done."

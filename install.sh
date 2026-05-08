@@ -1,12 +1,11 @@
 echo "Please Wait while Its Installing No New Folder Needed!!!"
+mkdir ~/fsoc
+git clone https://github.com/temptechx32/fsociety.py.git ~/fsoc
 
-git clone https://github.com/aeroxptech/fsociety.py/src ~/fsoc
-
-echo
-"C++ sub_folder = true"
-"Python sub_folder = true"
-"ruby etc sub_folder = true"
-"Shell&Batchfile sub_folder = true"
+sudo rm -rf ~/fsoc/install.sh
+sudo rm -rf ~/fsoc/index.html
+sudo rm -rf ~/fsoc/assets
 
 echo "Install Done"
-cd ~/fsoc
+cd ~/fsoc/
+

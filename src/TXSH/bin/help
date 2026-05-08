@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+echo "======================"
+echo "     TXSH HELP"
+echo "======================"
+echo
+
+echo "Bin Commands:"
+echo "  techxfetch  Show system info"
+echo "  fbsh        Start Femboy Shell"
+echo "  hello       Test command"
+echo
+
+echo "TXSH Version: 0.1"

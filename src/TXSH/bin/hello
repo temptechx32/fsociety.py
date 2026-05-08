@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+echo "Hello This is  TXSH print help for cmds"

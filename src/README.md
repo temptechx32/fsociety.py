@@ -1,1 +1,1 @@
-I LOVE YALL IN THE MOST GAY WAY POSSIBLE AS A NOT GAY PERSON
+sudo: more: file fsociety.hcs not found!

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+mkdir ~/fsociety.py/NewFolder
+
+echo "New Folder Created"

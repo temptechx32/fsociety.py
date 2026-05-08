@@ -315,8 +315,7 @@ while True:
         print("FAILED TO AUTO ENABLE FIREWALL!!! [Current State: Disabled][Error Code: 3435FWEE]")
         firewall = input("""Enable Or Disable Firewall Manually
         >>> """)
-        print("""FIREWALL STATUS: 
-        " + firewall + "[Temporary State!!!]""")
+        print("FIREWALL STATUS: " + firewall + "[Temporary State!!!]")
       
     else:
         print("\nIllegal Command")

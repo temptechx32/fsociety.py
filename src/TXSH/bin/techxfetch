@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# USER
+echo "User: $USER"
+
+# SHELL
+echo "Shell: TXSH"
+
+# OS
+OS=$(grep '^NAME=' /etc/os-release | cut -d= -f2 | tr -d '"')
+echo "OS: $OS"
+
+# DE / WM
+echo "DE: ${XDG_CURRENT_DESKTOP:-Unknown}"
+
+# NETZWERKINTERFACE FINDEN
+IFACE=$(ip route | grep default | awk '{print $5}' | head -n1)
+
+# IP
+IP=$(ip addr show "$IFACE" | grep "inet " | awk '{print $2}' | cut -d/ -f1)
+
+# MAC
+MAC=$(cat /sys/class/net/$IFACE/address)
+
+# ETHERNET ODER WLAN
+if [[ "$IFACE" == wl* ]]; then
+    NETTYPE="Wi-Fi"
+elif [[ "$IFACE" == en* ]]; then
+    NETTYPE="Ethernet"
+else
+    NETTYPE="Unknown"
+fi
+
+echo "IP: $IP"
+echo "MAC: $MAC"
+echo "NET: $NETTYPE"
