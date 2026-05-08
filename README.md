@@ -1,8 +1,8 @@
-##TXSH
+# TXSH
 
 TXSH is a Shell that Allows People To Have a diffrent shell its made by Techx
 
-To Run the installer do this
+To Run the installer do this or install the Shell script on
 
 <code>
 download The install.sh that you see first
